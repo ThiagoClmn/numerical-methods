@@ -18,6 +18,14 @@ h = 0.01 # Variable h stands for the space between y-values
 # k3 = f(t + h / 2 , y + (k2 * h)/2)
 # k4 = f(t + h , y + k3 * h)
 
+def RK4_step(f, y, t, dt):
+    k1 = f(y, t)
+    k2 = f(y + k1 * dt/2 , t + 0.5*dt)
+    k3 = f(y + k2 * dt/2 , t + 0.5*dt)
+    k4 = f(y + dt * k3, t + dt)
+    
+    return dt * (k1 + 2*k2 + 2*k3 + k4) / 6
+
 # The method's formula is:
 # y += (k1 + 2*k2 + 2*k3 + k4)*h/6
 
