@@ -1,6 +1,5 @@
 program volterra
 
-
   implicit none
   integer::i,n
   real(8)::dt
@@ -26,8 +25,7 @@ program volterra
 end program volterra
 
 
-
-
+! Função da EDO de LOtka-Volterra
 subroutine lotka(vz,dvz)
   implicit none
   real(8)::a,b,g,d
@@ -39,3 +37,4 @@ subroutine lotka(vz,dvz)
   dvz(1) = vz(1)*(a-b*vz(2))
   dvz(2) = vz(2)*(d*vz(1)-g)
 end subroutine
+
